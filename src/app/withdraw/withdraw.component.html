@@ -1,0 +1,65 @@
+<div class="container-fluid p-0 m-0" >
+
+    <h1 style="padding:30px ;">Areooo Cash Withdraw</h1>
+    <mat-tab-group mat-stretch-tabs>
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">account_balance_wallet</mat-icon>
+            WALLETS
+          </ng-template>
+         <div class="tabContent container">
+            <form  id="payoutForm"  method="POST"  class="was-validated">
+            <div class="form-group">
+                <label for="sel">Wallet :</label>
+                <select class="form-control" id="sel" name="mode" [(ngModel)]="selectedValue" (change)="selectOption()">
+                    <option value="walletaccounts"> Select Wallet account </option>
+                    <option value="paytm">Paytm</option>
+                    <option value="monbikwik">Mobikwik</option>
+                </select>
+            </div>
+            <div id="pwdinput" class="form-group" style="display: none">
+                <div  class="input-group mb-3">
+                    <div class="input-group-prepend">
+                            <span class="input-group-text text-success font-weight-bold" > &#8377; </span>
+                    </div>
+                    <input type="number" class="form-control" name="amt" placeholder="Amount" id="amount"  min="10" max="38" step="10"  value="10" (change)="selectOption()" (ngModelChange)="selectOption()" [(ngModel)]="amount" required>
+                    
+                 </div>
+            </div>
+            <button type="submit"  class="btn btn-success">Withdraw <i class="fas fa-exchange-alt"></i></button>
+            </form> 
+         </div>
+        </mat-tab>
+      
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">receipt</mat-icon>
+            VOUCHERS
+          </ng-template>
+          <div class="tabContent container ">
+            <div class="row align-items-center d-flex flex-column"> 
+                <h3>E-Vouchers</h3>
+                <p class='text-warning'>This feature will be avaliable soon!</p>
+            </div>
+          </div> 
+        </mat-tab>
+      
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon >account_balance</mat-icon>
+            BANK TRANSFER
+          </ng-template>
+      
+          <div class="tabContent container">
+            <div class="row align-items-center d-flex flex-column"> 
+                <h3>Instant Bank Transfer within India.</h3>
+                <form  id="bankTransForm" action="securepayout.php" method="POST"  class="was-validated">
+                    <input type="hidden" name="Benficiary" value="add">
+                    <button class="btn btn-success"  type="submit">Fetch Bank Details</button> 
+                </form>
+            </div>
+          </div> 
+        </mat-tab>
+      </mat-tab-group>
+</div>
+

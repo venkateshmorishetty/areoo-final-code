@@ -24,11 +24,14 @@ import { MyOrdersComponent } from './my-orders/my-orders.component';
 
 import {NgxPaginationModule} from 'ngx-pagination';
 import { OrdersComponent } from './orders/orders.component';
+import { WithdrawComponent } from './withdraw/withdraw.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 const appRoutes: Routes = [{path:'myOrders', component:MyOrdersComponent},
                           {path:'orders', component:OrdersComponent},
                           {path:'',component:HomeComponent},
+                          {path:'withdraw',component:WithdrawComponent},
                           ];
 @NgModule({
   declarations: [
@@ -37,7 +40,8 @@ const appRoutes: Routes = [{path:'myOrders', component:MyOrdersComponent},
     FooterComponent,
     CategoryDialogComponent,
     MyOrdersComponent,
-    OrdersComponent
+    OrdersComponent,
+    WithdrawComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +57,7 @@ const appRoutes: Routes = [{path:'myOrders', component:MyOrdersComponent},
     MatDividerModule,
     MatDialogModule,
     NgxPaginationModule,
+    MatTabsModule,
     RouterModule.forRoot(appRoutes)
 
   ],
