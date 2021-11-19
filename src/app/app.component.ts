@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import {  NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-
+import { MatIconRegistry } from "@angular/material/icon";
+import { DomSanitizer } from "@angular/platform-browser";
 
 
 
@@ -16,8 +17,39 @@ import { MatDialog } from '@angular/material/dialog';
 export class AppComponent {
   
 
-  constructor(private modalService: NgbModal, private dialog:MatDialog) {
-
+  constructor(private modalService: NgbModal,  private matIconRegistry: MatIconRegistry,  private domSanitizer: DomSanitizer) {
+    this.matIconRegistry.addSvgIcon(
+      "myaccount",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/navbar_icons/Stores.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
+      "myOrders",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/navbar_icons/My-Orders.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
+      "withdraw",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/navbar_icons/Withdraw.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
+      "affiliate",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/navbar_icons/Create-Affiliate.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
+      "settings",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/navbar_icons/Setting.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
+      "support",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/navbar_icons/Support.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
+      "notifications",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/navbar_icons/Notifications.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
+      "logout",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/navbar_icons/LOG-OUT.svg")
+    );
   }
   closeResult = '';
   logincontent:boolean = true;

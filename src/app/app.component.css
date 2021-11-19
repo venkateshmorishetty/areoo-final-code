@@ -40,6 +40,11 @@
 .menu-button:hover, .menu-button:active{
   background-color: #4fb372;
   color: white;
+  
+}
+
+.testing:hover {
+  fill: white;
 }
 
 .menuitems{

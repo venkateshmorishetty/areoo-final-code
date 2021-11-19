@@ -6,29 +6,37 @@
       <h1>Venkatesh</h1>
     </div>
     <mat-button class="menu-button" [routerLink]="['myOrders']" >
-      <span>My Account</span>
+      <mat-icon svgIcon="myaccount"></mat-icon>
+      <span class="pl-2">My Account</span>
    </mat-button>
    <mat-button class="menu-button" [routerLink]="['orders']">
-      <span>My Orders</span>
+    <mat-icon svgIcon="myOrders" class="tesing"></mat-icon>
+    <span class="pl-2">My Orders</span>
    </mat-button>
    <button mat-button class="menu-button" [routerLink]="['withdraw']">
-      <span>Withdraw</span>
+    <mat-icon svgIcon="withdraw"></mat-icon>
+    <span class="pl-2">Withdraw</span>
     </button>
     
     <button mat-button class="menu-button">
-      <span>Support</span>
+      <mat-icon svgIcon="support"></mat-icon>
+      <span class="pl-2">Support</span>
     </button>
     <button mat-button class="menu-button">
-      <span>Settings</span>
+      <mat-icon svgIcon="settings"></mat-icon>
+      <span class="pl-2"> Settings</span>
     </button>
     <button mat-button class="menu-button">
-      <span>Notifications</span>
+      <mat-icon svgIcon="notifications"></mat-icon>
+      <span class="pl-2">Notifications</span>
     </button>
     <button mat-button class="menu-button">
-      <span>Create Affiliate Link</span>
+      <mat-icon svgIcon="affiliate"></mat-icon>
+      <span class="pl-2">Create Affiliate Link</span>
     </button>
     <button mat-button class="menu-button">
-      <span>Logout</span>
+      <mat-icon svgIcon="logout"></mat-icon>
+      <span class="pl-2">Logout</span>
     </button>
   </mat-sidenav>
   <mat-sidenav-content>
