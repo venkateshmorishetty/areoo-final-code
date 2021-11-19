@@ -1,0 +1,108 @@
+
+.joinbutton a{
+  color: black;
+  border: 2px solid #cae7d3;
+  border-radius: 20px;
+}
+
+.mat-sidenav{
+  height: auto;
+  background-color:#fafaf7;
+  width: 50%;
+  text-align: center;
+}
+
+.logo-nav img {
+  width: 30%;
+  padding-top: 5%;
+  
+}
+
+.logo-nav h1{
+  color: whitesmoke;
+}
+.logo-nav {
+  background-color: #2aa65a;
+}
+
+.menu-button{
+  background-color:#fafaf7;
+  height: 50px;
+  border-bottom: 1px solid #4fb372;
+  border-radius: 0px;;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: green;
+  padding-left: 10%;
+}
+.menu-button:hover, .menu-button:active{
+  background-color: #4fb372;
+  color: white;
+}
+
+.menuitems{
+  float: right;
+}
+
+.login-window{
+    
+    font-size: 10px;;
+    font-weight: bold;
+}
+
+.login-window input{
+   
+    border: 2px solid #e5f4ea;
+    margin-bottom: 15px;
+    border-radius: 1rem;
+    
+}
+
+.login-window a{
+  color: #565653;
+   text-decoration: none; 
+   font-size: 12px; 
+   float: right;
+   margin: 0px;
+}
+
+.login-window input::placeholder{
+  font-size: 15px;
+}
+
+.leftcontent{
+  height: 100px;
+}
+.rightcontent{
+  height:420px;
+}
+.rightcontent,.leftcontent{  
+  background-color: white;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  
+}
+
+.leftcontent{
+    background-color:#e5f4ea ; 
+}
+
+
+
+
+#main{
+    transition:0.5s ;
+}
+
+.btn{
+  margin: 20px;
+  border:2px solid #e5f4ea;
+  background-color: white;
+}
+.icon img{
+  fill: white;
+}

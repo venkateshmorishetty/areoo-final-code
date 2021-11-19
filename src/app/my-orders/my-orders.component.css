@@ -1,0 +1,96 @@
+.topPart{
+    height: 25vh;
+}
+
+
+
+.container-fluid{
+    background-color: #c1e3cb;
+}
+
+
+.bottomPart{
+    background-color: #f4f4f1;
+    border-radius:20px 20px 0% 0%;
+    
+}
+
+.bottomPart a{
+    border: 2px solid #cae7d3;
+    color: #6abd87;
+    border-radius: 20px;
+}
+
+.bottomPart a:hover, .bottomPart a:active{
+   background-color: #4fb372;
+   color: white;
+}
+
+.user{
+    height: 20vh;
+    width: 20vw;
+    margin-top: 15vh;
+    margin-left: 40vw;
+    border-radius: 20px;
+}
+
+
+
+.alltransaction_table {
+    height: 0px; 
+    overflow-x: auto;
+    overflow-y: auto;
+    transition: 0.5s;
+}
+
+
+.alltransaction_table::-webkit-scrollbar {
+    display: none;
+  }
+  .alltransaction_table {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+
+  .alltransaction_table table td{
+      background-color: white;
+  }
+
+  .alltransaction_table table th{
+      background-color: green;
+      color: white;
+  }
+  .bottomPart button{
+    width: 100%; 
+    height: 50px;
+    text-align: left;
+    color:#44bf71;
+    background-color: white; 
+    border-top: 2px solid #cae7d3;
+    border-bottom: 2px solid #cae7d3;
+    border-left: white;
+    border-right: white;
+  }
+
+
+ .clickHistory button{
+    width: 100%; 
+    height: 50px;
+    text-align: left;
+    color:#44bf71;
+    background-color: white; 
+  }
+
+  .clickHistory{
+    height: 0px; 
+    overflow: hidden;
+    transition: 0.5s;
+  }
+
+
+
+  ._2sVfI7:hover{
+    transform: rotate(0deg) rotate(90deg);
+    color:red
+  }

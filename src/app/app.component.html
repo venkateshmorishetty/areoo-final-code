@@ -1,0 +1,123 @@
+
+<mat-sidenav-container>
+  <mat-sidenav position="end" [(opened)]="opened">
+    <div class="logo-nav" >
+      <img src="../assets/profile.jpg" alt="" >
+      <h1>Venkatesh</h1>
+    </div>
+    <mat-button class="menu-button" [routerLink]="['myOrders']" >
+      <span>My Account</span>
+   </mat-button>
+   <mat-button class="menu-button" [routerLink]="['orders']">
+      <span>My Orders</span>
+   </mat-button>
+   <button mat-button class="menu-button">
+      <span>Withdraw</span>
+    </button>
+    
+    <button mat-button class="menu-button">
+      <span>Support</span>
+    </button>
+    <button mat-button class="menu-button">
+      <span>Settings</span>
+    </button>
+    <button mat-button class="menu-button">
+      <span>Notifications</span>
+    </button>
+    <button mat-button class="menu-button">
+      <span>Create Affiliate Link</span>
+    </button>
+    <button mat-button class="menu-button">
+      <span>Logout</span>
+    </button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+
+
+  <!-- for navigation bar -->
+
+    
+    <nav class="navbar navbar-expand row" style="background-color: #e5f4ea; height: 20vh;">
+      <a class="navbar-brand" href="#"><img src="../assets/logo.PNG" alt="areooo logo"></a>
+      
+      <div class="collapse navbar-collapse" >
+        <ul class = "ml-auto joinbutton">
+          <li style="list-style-type: none;">
+              <a *ngIf = "userUnAuthenticated; else profileContent" class=" nav-link" (click)="open(content)">JOIN NOW</a>
+              <ng-template #profileContent >
+                <span style="font-size:30px;cursor:pointer; " (click)="opened=!opened"><img src="../assets/navbarIcon.PNG" alt=""></span>
+              </ng-template>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+<ng-template #content let-modal>
+  <div class="login-window container" id="myModal">
+    <div class="row"> 
+      <div class="col-12 left leftcontent"> 
+        <img src="../assets/logo.PNG" alt="logo">
+      </div>
+    </div>
+    <div class ="row" >
+      <div class="col-12 rightcontent" >
+        <form *ngIf="logincontent; else signUpcontent;" #loginForm="ngForm" (ngSubmit) = "login(loginForm)" >
+          <div class="form-group"> 
+            <input type="email" class="form-control"  name="username" placeholder="Phone, email or username" ngModel> 
+            <input type="password" class="form-control"  name = "pwd" placeholder="Password" ngModel> 
+          </div>  
+          <div class="d-flex ">
+            <a href="#" class="mr-auto">Forgot password?</a><br>
+            <input type="submit" style="background-color: #4fb372; color: whitesmoke;">
+          </div>
+          <p class="text-center" style="font-weight: lighter;"> or Sign in with:</p>
+          <div class=" d-flex justify-content-center">
+            <button class="btn btn-rounded"><i class="fab fa-facebook-f text-center" style="color: #2aa65a"></i></button>
+            <!--Twitter-->
+            <button class="btn btn-rounded"><i class="fal fa-mobile" style="color: #2aa65a"></i></button>
+            <!--Google +-->
+            <button class="btn btn-rounded"><i class="fab fa-google-plus-g" style="color: #2aa65a"></i></button>
+          
+          </div>
+
+          <p class="font-small d-flex justify-content-end">Not a member? <a href="#" class="ml-1" style="color: #2aa65a" (click)="signUp()">
+            Sign Up</a></p>
+        </form>
+        
+       
+        <ng-template #signUpcontent>
+          <form >
+            <div class="form-group"> 
+              <input type="text" class="form-control" id="name" placeholder="Full name" required>
+              <input type="number" class="form-control" id="number" placeholder="Mobile" required> 
+              <input type="email" class="form-control" id="email" placeholder="Enter email"> 
+              <input type="password" class="form-control" id="pwd" placeholder="Enter password"> 
+              <input type="password" class="form-control" id="pwd" placeholder="Confirm Password"> 
+            </div>  
+
+            
+            <div class="checkbox"> <label><input type="checkbox">I agree on Terms & Conditions</label> </div>  
+            <div class="d-flex ">
+              <input type="submit" class="mr-auto btn btn-primary" value="Create Account" style="background-color:#2aa65a ; border: none;">
+              <input type="submit" class="btn btn-primary" value="Go to Login" style="background-color:#2aa65a ; border: none;" (click)="signUp()">  
+            </div>
+            
+        </form>
+      </ng-template>
+      </div> 
+    </div>
+  
+  </div>
+  
+</ng-template>
+
+
+
+
+

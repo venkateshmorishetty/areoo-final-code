@@ -1,0 +1,37 @@
+
+
+<div class="row" style="background-color: #e5f4ea;">
+    <img src="./assets/unauthenticated-homepage.PNG" alt="home page image" style="width: 30%; margin: auto;">
+</div>
+
+<div class="row  d-flex justify-content-center align-items-center" style="margin-top:2%;">
+    <div class="col-md-6">
+        <div class="form"> <i class="fa fa-search"></i> <input type="text" class="form-control form-input" placeholder="Search for Products"> <span class="left-pan"><i class="fa fa-microphone"></i></span> </div>
+    </div>
+</div>
+
+<div class="categoriesScroll" style="overflow: auto; white-space: nowrap; ">
+    <button *ngFor="let category of  categoriesData" class="categoryButton" value="{{category.value}}" (click) = "scrollToCategory(category.value, category.name)">{{category.name}}</button>
+</div>
+
+
+<div *ngFor="let data of marketPlaceData" >
+    <div class="row" style="margin-left: 20px" id = "categoryHeader_{{data.value}}">
+        <h4 style="color:#4fb372 ; font-weight: normal;">{{data.category_name}}</h4>
+    </div>
+    <div class="row">
+        <div *ngFor="let offer of data.category_offers" class="col-6 col-lg-3 col-md-3 "  >
+            <div class="card" style="text-align:center; width:10em; margin-left: auto;margin-right: auto; margin-top: 30px;border-radius: 20px;">
+                <img src="{{offer.image}}" class="card-img-top" alt="brand image" >
+                <div class="card-body " style="border-radius:0px 0px 20px 20px; background-color: #2aa65a;">
+                    <a href="#" class="card-text" style=" font-weight: bold; font-size: 10px; text-decoration: none; color: whitesmoke;">{{offer.cashback}}</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+

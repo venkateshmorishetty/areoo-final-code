@@ -1,0 +1,110 @@
+<div style="background-color:#e5f4ea; margin-left: -15px;margin-right: -15px;">
+    <div class="topPart">
+            <img src="../../assets/profile.jpg" alt="" class="user">
+            <div class="userInfo text-center" >
+                <h2 style="font-weight: bold;padding-top: 10px;">Venkatesh</h2>
+                <p>Member since:10-11-2021</p>
+            </div>  
+    </div>
+    <div class="bottomPart">
+        <div  class="dummy" style="padding-left: 5vw; padding-right: 5vw; padding-top: 30vh;">
+            <h1>Your Wallet</h1>
+            <div class="showBalance" style="height: 30vh; background-color: #44bf71; border-radius: 30px;;">
+
+            </div>
+            <div class="sample" style="padding-top: 2vh; float: right; " >
+                <a href="#" class="btn ">ADD BANK ACC</a>
+                <a href="#"  class="btn " >REDEEM NOW</a>
+            </div>
+            <div style="padding-top: 10vh;">
+                <!-- all transactions data -->
+                <button (click) ="callingAllTransactionsDropdown()">All Transactions</button>
+                <div class="alltransaction_table" id="alltransactions">
+                    <table class="table  w-auto" >
+                        <thead>
+                            <tr>
+                            <th scope="col">order date</th>
+                            <th scope="col">category_icon</th>
+                            <th scope="col">Cashback</th>
+                            <th scope="col">status</th>
+                            <th scope="col">expected by</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Ref.ID</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor= "let data of allTransactions">
+                            <td>{{data.date}}</td>
+                            <td><img src="{{data.category_icon}}" height='30' width='30' alt="testing"></td>
+                            <td>{{data.cashback}}</td>
+                            <td>{{data.status}}</td>
+                            <td>{{data.ExecptedBy}}</td>
+                            <td>{{data.Amount}}</td>
+                            <td>{{data.Ref_ID}}</td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div> 
+                
+                <!-- RecenctRedmption data -->
+
+                <button (click) ="callingRecentRedemptiopnsDropdown()">Recenct Redmptions</button>
+                <div class="alltransaction_table" id="recentRedemptions">
+                    <table class="table  w-auto" >
+                        <thead>
+                            <tr>
+                            <th scope="col">order date</th>
+                            <th scope="col">Redeem mode</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">status</th>
+                            <th scope="col">fulfilment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor= "let data of renentRedemptions">
+                            <td>{{data.date}}</td>
+                            <td>{{data.redeemmode}}</td>
+                            <td>{{data.amount}}</td>
+                            <td>{{data.status}}</td>
+                            <td>{{data.fulfillment}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div> 
+                <!-- click history data-->
+                <button (click) ="clickHisotryData()" >Click Hisotry</button>
+                <div class="clickHistory" id="clickHistory">
+                    <button (click) ="clicksData()" style="border: none; background-color: #e5f4ea;">clicks</button>
+                    <div class="alltransaction_table" id="clicksDiv">
+                        <table class="table w-auto" >
+                            <thead>
+                                <tr>
+                                <th scope="col">Date</th>
+                                <th scope="col">Merchant</th>
+                                <th scope="col">Ref.Id</th>
+                                
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor= "let data of clicks">
+                                <td>{{data.date}}</td>
+                                <td>{{data.merchant}}</td>
+                                <td>{{data.refId}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div> 
+                    <div>
+                        <button (click) ="sharedData()" style="border: none; background-color: #e5f4ea;">shared</button>
+                        <svg width="50" height="80" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="_2sVfI7"><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#fff" class="_1zrN4q"></path></svg>
+                    </div>
+                </div>
+            </div>    
+             
+        </div>
+       
+    </div>
+    
+    
+</div>
