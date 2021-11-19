@@ -1,0 +1,42 @@
+<div style="height:70vh">
+<div class="row product" *ngFor="let data of ordersData | paginate: { itemsPerPage: 2, currentPage: p }" style="font-size: 75%;">
+    <div class="col-3 col-md-3 col-lg-3 ">
+        <div class="row justify-content-center">
+            <img src="{{data.product_img_path}}" alt="product imgs" style="height: 75px; width: 75px; border-radius: 5px;">
+           
+        </div>
+        <div class="row justify-content-center" >
+            <p><strong>{{data.price}}</strong></p>
+           
+        </div>
+        <div class="row justify-content-center" >
+            <p><strong>{{data.ordered_date}}</strong></p>
+           
+        </div>
+        
+       
+    </div>
+    <div class="col-6 col-md-6 col-lg-6">
+        <div class="row justify-content-left" >
+            <h5>{{data.product_description}}</h5>
+        </div>
+        <div class="row justify-content-left">
+            <h5 *ngIf="data.status === 'pending'" style="color: #ffbb76; font-weight: bold;">₹{{data.cashback}}  Awaited </h5>
+            <h5 *ngIf="data.status === 'success'" style="color: #00c851; font-weight: bold">₹{{data.cashback}}  Credited </h5>
+            <h5 *ngIf="data.status === 'cancel'" style="color: red; font-weight: bold">₹{{data.cashback}}  Returned </h5>
+        </div>
+        <div class="row justify-content-left" style="overflow-x: hidden;">
+            <h5>Expected by: {{data.expected_date}}</h5>
+        </div>
+    </div>
+    <div class="col-3 col-md-3 col-lg-3">
+        <div class="row justify-content-center">
+            <img src="{{data.store_img_path}}" alt="product imgs" style="height: 100px; width: 100px;">
+        </div>
+       
+        
+
+    </div>
+</div>
+</div>
+<pagination-controls (pageChange)="p = $event" class="text-center"></pagination-controls>

@@ -21,12 +21,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CategoryDialogComponent } from './category-dialog/category-dialog.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
-// import { OrdersComponent } from './orders/orders.component';
+
 import {NgxPaginationModule} from 'ngx-pagination';
+import { OrdersComponent } from './orders/orders.component';
 
 
 const appRoutes: Routes = [{path:'myOrders', component:MyOrdersComponent},
-                            // {path:'orders', component:OrdersComponent},
+                          {path:'orders', component:OrdersComponent},
                           {path:'',component:HomeComponent},
                           ];
 @NgModule({
@@ -35,7 +36,8 @@ const appRoutes: Routes = [{path:'myOrders', component:MyOrdersComponent},
     HomeComponent,
     FooterComponent,
     CategoryDialogComponent,
-    MyOrdersComponent
+    MyOrdersComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,6 @@ const appRoutes: Routes = [{path:'myOrders', component:MyOrdersComponent},
     MatDividerModule,
     MatDialogModule,
     NgxPaginationModule,
-   // FlexLayoutModule,
     RouterModule.forRoot(appRoutes)
 
   ],
