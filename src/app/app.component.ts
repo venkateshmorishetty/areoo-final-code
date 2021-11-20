@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
 
+import { ViewChild } from '@angular/core';
 
 
 @Component({
@@ -57,7 +58,7 @@ export class AppComponent {
   userUnAuthenticated:boolean = true;
   displaySidenav:boolean = false;
   opened:boolean = false;
-  
+  @ViewChild("mat-sidenav") sidenav:any;
   open(content:any) {
     console.log("in the oen")
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
@@ -94,8 +95,16 @@ export class AppComponent {
    }
   }
 
-  showNavandToolbar(){
-    this.opened = !this.opened;
-    console.log("nav bar "+this.opened)
+  showNavandToolbar(check:boolean){
+    var toolbar = document.getElementById("toolbar");
+    console.log("chekc value "+check)
+
+     if(toolbar){
+        if(check){
+          toolbar.style.display="flex"
+        } else{
+          toolbar.style.display="none"
+        }
+    }
   }
 }

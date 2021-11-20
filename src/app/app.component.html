@@ -1,6 +1,6 @@
 
 <mat-sidenav-container>
-  <mat-sidenav position="end" [(opened)]="opened">
+  <mat-sidenav #sidenav position="end" (opened)="showNavandToolbar(true)" (closed)="showNavandToolbar(false)">
     <div class="logo-nav" >
       <img src="../assets/profile.jpg" alt="" >
       <h1>Venkatesh</h1>
@@ -41,7 +41,7 @@
   </mat-sidenav>
   <mat-sidenav-content>
 
-
+    
 
   <!-- for navigation bar -->
 
@@ -54,19 +54,33 @@
           <li style="list-style-type: none;">
               <a *ngIf = "userUnAuthenticated; else profileContent" class=" nav-link" (click)="open(content)">JOIN NOW</a>
               <ng-template #profileContent >
-                <span style="font-size:30px;cursor:pointer; " (click)="showNavandToolbar()"><img src="../assets/navbarIcon.PNG" alt=""></span>
+                <span style="font-size:30px;cursor:pointer; " (click)="sidenav.toggle()"><img src="../assets/navbarIcon.PNG" alt=""></span>
               </ng-template>
           </li>
         </ul>
       </div>
     </nav>
     <router-outlet></router-outlet>
-
-
-    
+   
+  
 
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+<!-- for toolbar -->
+
+
+
+  <mat-toolbar class="toolbarNav" id="toolbar" style="display: none;">
+    <button mat-flat-button routerLink="/top-artists" routerLinkActive="active-link">
+      <mat-icon svgIcon="myaccount"></mat-icon>
+      <span class="pl-2">Online Stores</span>
+    </button>
+    <button mat-flat-button routerLink="/top-tracks" routerLinkActive="active-link">
+      <mat-icon svgIcon="myaccount"></mat-icon>
+      <span class="pl-2">Local Stores</span>
+  </button>
+  </mat-toolbar>
 
 
 

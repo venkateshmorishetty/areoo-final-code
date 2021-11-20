@@ -27,6 +27,7 @@ import { OrdersComponent } from './orders/orders.component';
 import { WithdrawComponent } from './withdraw/withdraw.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { OnlineStoresComponent } from './online-stores/online-stores.component';
 
 const appRoutes: Routes = [{path:'myOrders', component:MyOrdersComponent},
                           {path:'orders', component:OrdersComponent},
@@ -41,7 +42,8 @@ const appRoutes: Routes = [{path:'myOrders', component:MyOrdersComponent},
     CategoryDialogComponent,
     MyOrdersComponent,
     OrdersComponent,
-    WithdrawComponent
+    WithdrawComponent,
+    OnlineStoresComponent
   ],
   imports: [
     BrowserModule,
