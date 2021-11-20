@@ -94,7 +94,7 @@ export class AppComponent {
    }
   }
 
-  showNavBar(){
+  showNavandToolbar(){
     this.opened = !this.opened;
     console.log("nav bar "+this.opened)
   }

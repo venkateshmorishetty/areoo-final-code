@@ -54,13 +54,17 @@
           <li style="list-style-type: none;">
               <a *ngIf = "userUnAuthenticated; else profileContent" class=" nav-link" (click)="open(content)">JOIN NOW</a>
               <ng-template #profileContent >
-                <span style="font-size:30px;cursor:pointer; " (click)="opened=!opened"><img src="../assets/navbarIcon.PNG" alt=""></span>
+                <span style="font-size:30px;cursor:pointer; " (click)="showNavandToolbar()"><img src="../assets/navbarIcon.PNG" alt=""></span>
               </ng-template>
           </li>
         </ul>
       </div>
     </nav>
     <router-outlet></router-outlet>
+
+
+    
+
   </mat-sidenav-content>
 </mat-sidenav-container>
 

@@ -26,7 +26,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { OrdersComponent } from './orders/orders.component';
 import { WithdrawComponent } from './withdraw/withdraw.component';
 import {MatTabsModule} from '@angular/material/tabs';
-
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 const appRoutes: Routes = [{path:'myOrders', component:MyOrdersComponent},
                           {path:'orders', component:OrdersComponent},
@@ -58,6 +58,7 @@ const appRoutes: Routes = [{path:'myOrders', component:MyOrdersComponent},
     MatDialogModule,
     NgxPaginationModule,
     MatTabsModule,
+    MatToolbarModule,
     RouterModule.forRoot(appRoutes)
 
   ],
