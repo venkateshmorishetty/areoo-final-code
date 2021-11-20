@@ -112,5 +112,6 @@
 
 
 .mat-icon{
-  height: 50vh;
+  display: inline-flex;
+  vertical-align: top;
 }

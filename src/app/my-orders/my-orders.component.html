@@ -18,7 +18,19 @@
             </div>
             <div style="padding-top: 10vh;">
                 <!-- all transactions data -->
-                <button (click) ="callingAllTransactionsDropdown()">All Transactions</button>
+                <!-- <button (click) ="callingAllTransactionsDropdown()">All Transactions</button> -->
+
+                <button mat-button (click) ="callingAllTransactionsDropdown()">
+                        
+                    <span class="float-left"> Recenct Redmptions</span>
+                    
+                    <mat-icon *ngIf="allTransactionsArrow ; else downArrow"  class="float-right " style="padding-top: 5px;">keyboard_arrow_up</mat-icon>
+                    <ng-template #downArrow >
+                        <mat-icon   class="float-right" style="padding-top: 5px;">keyboard_arrow_down</mat-icon>
+                    </ng-template>
+                </button>
+
+
                 <div class="alltransaction_table" id="alltransactions">
                     <table class="table  w-auto" >
                         <thead>
@@ -49,7 +61,19 @@
                 
                 <!-- RecenctRedmption data -->
 
-                <button (click) ="callingRecentRedemptiopnsDropdown()">Recenct Redmptions</button>
+                 <!-- <button (click) ="callingRecentRedemptiopnsDropdown()">Recenct Redmptions</button>  -->
+
+                <button mat-button (click) ="callingRecentRedemptiopnsDropdown()">
+                        
+                    <span class="float-left"> Recenct Redmptions</span>
+                    
+                    <mat-icon *ngIf="recentRedemptionArrow ; else downArrow"  class="float-right " style="padding-top: 5px;">keyboard_arrow_up</mat-icon>
+                    <ng-template #downArrow >
+                        <mat-icon   class="float-right" style="padding-top: 5px;">keyboard_arrow_down</mat-icon>
+                    </ng-template>
+                </button> 
+
+
                 <div class="alltransaction_table" id="recentRedemptions">
                     <table class="table  w-auto" >
                         <thead>
@@ -73,9 +97,31 @@
                     </table>
                 </div> 
                 <!-- click history data-->
-                <button (click) ="clickHisotryData()" >Click Hisotry</button>
+                <!-- <button (click) ="clickHisotryData()" >Click Hisotry</button> -->
+
+                <button mat-button (click) ="clickHisotryData()">
+                        
+                    <span class="float-left"> Click Hisotry</span>
+                    
+                    <mat-icon *ngIf="historyArrow ; else downArrow"  class="float-right " style="padding-top: 5px;">keyboard_arrow_up</mat-icon>
+                    <ng-template #downArrow >
+                        <mat-icon   class="float-right" style="padding-top: 5px;">keyboard_arrow_down</mat-icon>
+                    </ng-template>
+                </button> 
+
                 <div class="clickHistory" id="clickHistory">
-                    <button (click) ="clicksData()" style="border: none; background-color: #e5f4ea;">clicks</button>
+                    <!-- <button (click) ="clicksData()" style="border: none; background-color: #e5f4ea;">clicks</button> -->
+
+                    <button mat-button (click) ="clicksData()">
+                        
+                        <span class="float-left"> clicks</span>
+                        
+                        <mat-icon *ngIf="clicksArrow ; else downArrow"  class="float-right " style="padding-top: 5px;">keyboard_arrow_up</mat-icon>
+                        <ng-template #downArrow >
+                            <mat-icon   class="float-right" style="padding-top: 5px;">keyboard_arrow_down</mat-icon>
+                        </ng-template>
+                    </button>      
+
                     <div class="alltransaction_table" id="clicksDiv">
                         <table class="table w-auto" >
                             <thead>
@@ -95,15 +141,16 @@
                             </tbody>
                         </table>
                     </div> 
-                    <a class="divbutton" (click) ="sharedData()" style="text-decoration: none; background-color: #e5f4ea;">
-                    <div  class="row w-100 h-50">
-                        <div class="col">
-                        <h3>shared</h3>
-                        </div>
-
-                        <div class="col"><mat-icon class="sample" >expand_more</mat-icon></div>
-                    </div>
-                    </a>
+                   
+                    <button mat-button  (click) ="sharedData()">
+                        
+                        <span class="float-left"> Shared</span>
+                        
+                        <mat-icon *ngIf="sharesArrow ; else downArrow"  class="float-right " style="padding-top: 5px;">keyboard_arrow_up</mat-icon>
+                        <ng-template #downArrow >
+                            <mat-icon   class="float-right" style="padding-top: 5px;">keyboard_arrow_down</mat-icon>
+                        </ng-template>
+                    </button>                  
                 </div>
             </div>    
              

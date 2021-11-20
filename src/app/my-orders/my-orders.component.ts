@@ -13,7 +13,13 @@ export class MyOrdersComponent implements OnInit {
   clicks:any;
   shares:any;
 
-  showData:boolean=false;
+  //variables for down arrows
+  allTransactionsArrow:boolean=false;
+  recentRedemptionArrow:boolean=false;
+  sharesArrow:boolean=false;
+  historyArrow:boolean=false;
+  clicksArrow:boolean=false;
+  
 
   allTransactions_jsonURL = "../../assets/allTransactions.json";
   rencentRedemptions_jsonURL = "../../assets/recentRedmeptions.json" ;
@@ -43,6 +49,7 @@ export class MyOrdersComponent implements OnInit {
 
   //reading jsons
   public getAllTransactionsHistoryJSON(): Observable<any> {
+
     return this.http.get(this.allTransactions_jsonURL);
   }
   public getRecentRedmptionsHistoryJSON(): Observable<any> {
@@ -59,6 +66,8 @@ export class MyOrdersComponent implements OnInit {
 
    callingAllTransactionsDropdown(){
 
+    this.allTransactionsArrow=!this.allTransactionsArrow;
+
       var element = document.getElementById('alltransactions');
       if(element){
         var style = window.getComputedStyle(element);
@@ -73,7 +82,7 @@ export class MyOrdersComponent implements OnInit {
    }
 
    callingRecentRedemptiopnsDropdown(){
-       
+      this.recentRedemptionArrow=!this.recentRedemptionArrow;
       var recentHistory = document.getElementById("recentRedemptions");
       if(recentHistory){
         var style = window.getComputedStyle(recentHistory);
@@ -87,7 +96,7 @@ export class MyOrdersComponent implements OnInit {
    }
 
    clickHisotryData(){ 
-
+    this.historyArrow=!this.historyArrow;
       var recentHistory = document.getElementById("clickHistory");
       if(recentHistory){
         var style = window.getComputedStyle(recentHistory);
@@ -101,6 +110,7 @@ export class MyOrdersComponent implements OnInit {
    }
 
    clicksData(){  
+     this.clicksArrow=!this.clicksArrow;
       var recentHistory = document.getElementById("clicksDiv")!;
       if(recentHistory){
         var style = window.getComputedStyle(recentHistory);
@@ -114,7 +124,7 @@ export class MyOrdersComponent implements OnInit {
    }
 
    sharedData(){
-
+    this.sharesArrow=!this.sharesArrow;
    }
 
 }
