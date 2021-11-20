@@ -108,6 +108,9 @@
   border:2px solid #e5f4ea;
   background-color: white;
 }
-.icon img{
-  fill: white;
+
+
+
+.mat-icon{
+  height: 50vh;
 }
