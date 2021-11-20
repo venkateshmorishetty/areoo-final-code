@@ -1,1 +1,35 @@
-<p>online-stores works!</p>
+
+
+
+    
+    <mat-tab-group mat-stretch-tabs  >
+        <mat-tab label="Online Stores" >
+        
+          <div class="tabContent">
+            
+            <div *ngFor="let data of marketPlaceData" >
+                <div class="row" style="margin-left: 20px" id = "categoryHeader_{{data.value}}">
+                    <h4 style="color:#4fb372 ; font-weight: normal;">{{data.category_name}}</h4>
+                </div>
+                <div class="row">
+                    <div *ngFor="let offer of data.category_offers" class="col-6 col-lg-3 col-md-3 "  >
+                        <div class="card" style="text-align:center; width:10em; margin-left: auto;margin-right: auto; margin-top: 30px;border-radius: 20px;">
+                            <img src="{{offer.image}}" class="card-img-top" alt="brand image" >
+                            <div class="card-body " style="border-radius:0px 0px 20px 20px; background-color: #2aa65a;">
+                                <a href="#" class="card-text" style=" font-weight: bold; font-size: 10px; text-decoration: none; color: whitesmoke;">{{offer.cashback}}</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+          </div>
+        </mat-tab>
+      
+        <mat-tab label="Online Deals">
+      
+          <div class="tabContent container">
+            <h1>Online deals</h1>
+          </div> 
+        </mat-tab>
+      </mat-tab-group>

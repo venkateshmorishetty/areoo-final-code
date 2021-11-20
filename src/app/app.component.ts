@@ -6,8 +6,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
 
-import { ViewChild } from '@angular/core';
 
+
+import { LocalStoresComponent } from './local-stores/local-stores.component';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,7 @@ import { ViewChild } from '@angular/core';
 export class AppComponent {
   
 
-  constructor(private modalService: NgbModal,  private matIconRegistry: MatIconRegistry,  private domSanitizer: DomSanitizer) {
+  constructor(private modalService: NgbModal,  private matIconRegistry: MatIconRegistry,  private domSanitizer: DomSanitizer, private dialog:MatDialog) {
     this.matIconRegistry.addSvgIcon(
       "myaccount",
       this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/navbar_icons/Stores.svg")
@@ -58,7 +59,8 @@ export class AppComponent {
   userUnAuthenticated:boolean = true;
   displaySidenav:boolean = false;
   opened:boolean = false;
-  @ViewChild("mat-sidenav") sidenav:any;
+
+
   open(content:any) {
     console.log("in the oen")
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
@@ -106,5 +108,10 @@ export class AppComponent {
           toolbar.style.display="none"
         }
     }
+  }
+
+
+  localStoresOpen(){
+    this.dialog.open(LocalStoresComponent);
   }
 }

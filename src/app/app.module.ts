@@ -28,11 +28,14 @@ import { WithdrawComponent } from './withdraw/withdraw.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { OnlineStoresComponent } from './online-stores/online-stores.component';
+import { LocalStoresComponent } from './local-stores/local-stores.component';
 
 const appRoutes: Routes = [{path:'myOrders', component:MyOrdersComponent},
                           {path:'orders', component:OrdersComponent},
                           {path:'',component:HomeComponent},
                           {path:'withdraw',component:WithdrawComponent},
+                          {path:'onlineStores',component:OnlineStoresComponent},
+                          {path:'localStores',component:LocalStoresComponent},
                           ];
 @NgModule({
   declarations: [
@@ -43,7 +46,8 @@ const appRoutes: Routes = [{path:'myOrders', component:MyOrdersComponent},
     MyOrdersComponent,
     OrdersComponent,
     WithdrawComponent,
-    OnlineStoresComponent
+    OnlineStoresComponent,
+    LocalStoresComponent
   ],
   imports: [
     BrowserModule,

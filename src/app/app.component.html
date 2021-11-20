@@ -72,11 +72,11 @@
 
 
   <mat-toolbar class="toolbarNav" id="toolbar" style="display: none;">
-    <button mat-flat-button routerLink="/top-artists" routerLinkActive="active-link">
+    <button mat-flat-button routerLink="onlineStores" routerLinkActive="active-link">
       <mat-icon svgIcon="myaccount"></mat-icon>
       <span class="pl-2">Online Stores</span>
     </button>
-    <button mat-flat-button routerLink="/top-tracks" routerLinkActive="active-link">
+    <button mat-flat-button (click)="localStoresOpen()" routerLinkActive="active-link">
       <mat-icon svgIcon="myaccount"></mat-icon>
       <span class="pl-2">Local Stores</span>
   </button>
