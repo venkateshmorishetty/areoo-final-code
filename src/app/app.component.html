@@ -1,5 +1,7 @@
 
 <mat-sidenav-container>
+
+  <!-- for side navigation bar menu -->
   <mat-sidenav #sidenav position="end" (opened)="showNavandToolbar(true)" (closed)="showNavandToolbar(false)">
     <div class="logo-nav" >
       <img src="../assets/profile.jpg" alt="" >
@@ -43,7 +45,7 @@
 
     
 
-  <!-- for navigation bar -->
+  <!-- for top navigation bar -->
 
     
     <nav class="navbar navbar-expand row" style="background-color: #e5f4ea; height: 20vh;">
@@ -67,7 +69,7 @@
   </mat-sidenav-content>
 </mat-sidenav-container>
 
-<!-- for toolbar -->
+<!-- for bottom toolbar -->
 
 
 
@@ -83,7 +85,7 @@
   </mat-toolbar>
 
 
-
+<!-- for login and signup page popup-->
 <ng-template #content let-modal>
   <div class="login-window container" id="myModal">
     <div class="row"> 

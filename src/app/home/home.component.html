@@ -1,20 +1,28 @@
 
-
+<!-- for home page image -->
 <div class="row" style="background-color: #e5f4ea;">
     <img src="./assets/unauthenticated-homepage.PNG" alt="home page image" style="width: 30%; margin: auto;">
 </div>
 
-<div class="row  d-flex justify-content-center align-items-center" style="margin-top:2%;">
-    <div class="col-md-6">
-        <div class="form"> <i class="fa fa-search"></i> <input type="text" class="form-control form-input" placeholder="Search for Products"> <span class="left-pan"><i class="fa fa-microphone"></i></span> </div>
+<!-- for search bar-->
+
+<div class="row  d-flex justify-content-center align-items-center" style="margin-top:20px;">
+    <div class="col-9 col-md-6 col-lg-6">
+        <div class="form"> 
+            <i class="fa fa-search"></i> 
+            <input type="text" class="form-control form-input" placeholder="Search for Products"> 
+            <span class="left-pan"><i class="fa fa-microphone"></i></span> 
+        </div>
     </div>
 </div>
+
+<!-- to display the list of categories buttons-->
 
 <div class="categoriesScroll" style="overflow: auto; white-space: nowrap; ">
     <button *ngFor="let category of  categoriesData" class="categoryButton" value="{{category.value}}" (click) = "scrollToCategory(category.value, category.name)">{{category.name}}</button>
 </div>
 
-
+<!-- to display each category offers in the form of cards-->
 <div *ngFor="let data of marketPlaceData" >
     <div class="row" style="margin-left: 20px" id = "categoryHeader_{{data.value}}">
         <h4 style="color:#4fb372 ; font-weight: normal;">{{data.category_name}}</h4>
