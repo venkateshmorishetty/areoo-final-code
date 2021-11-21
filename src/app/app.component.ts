@@ -1,10 +1,13 @@
-import { ThrowStmt } from '@angular/compiler';
+import { analyzeAndValidateNgModules, ThrowStmt } from '@angular/compiler';
 import { Component } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import {  NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
+import { HttpClient } from '@angular/common/http';
+
+import { HttpParams } from '@angular/common/http';
 
 
 
@@ -19,7 +22,8 @@ import { LocalStoresComponent } from './local-stores/local-stores.component';
 export class AppComponent {
   
 
-  constructor(private modalService: NgbModal,  private matIconRegistry: MatIconRegistry,  private domSanitizer: DomSanitizer, private dialog:MatDialog) {
+  constructor(private modalService: NgbModal,  private matIconRegistry: MatIconRegistry,  private domSanitizer: DomSanitizer, private dialog:MatDialog,
+    private http: HttpClient) {
     this.matIconRegistry.addSvgIcon(
       "myaccount",
       this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/navbar_icons/Stores.svg")
@@ -59,6 +63,7 @@ export class AppComponent {
   userUnAuthenticated:boolean = true;
   displaySidenav:boolean = false;
   opened:boolean = false;
+  output:any;
 
 
   open(content:any) {
@@ -114,4 +119,19 @@ export class AppComponent {
   localStoresOpen(){
     this.dialog.open(LocalStoresComponent);
   }
+
+
+  callAreooSupport(){
+   
+    var whatsappURL = "https://api.whatsapp.com/send/";
+    let params = new HttpParams().set("phone",919000226463).set("text", "I am facing an issue while using Areooo").set("app_absent",0); //Create new HttpParams
+    this.http.get(whatsappURL, {params:params}).subscribe(data => {
+      this.output = data;
+     });
+
+     console.log("here=====================================")
+     console.log(this.output)
+
+  }
 }
+
