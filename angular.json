@@ -80,7 +80,8 @@
               "browserTarget": "areooo-front-end:build:production"
             },
             "development": {
-              "browserTarget": "areooo-front-end:build:development"
+              "browserTarget": "areooo-front-end:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
@@ -89,6 +90,7 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "areooo-front-end:build"
+           
           }
         },
         "test": {
