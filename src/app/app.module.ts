@@ -12,7 +12,6 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { FooterComponent } from './footer/footer.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
@@ -47,7 +46,6 @@ const appRoutes: Routes = [{path:'myOrders', component:MyOrdersComponent},
   declarations: [
     AppComponent,
     HomeComponent,
-    FooterComponent,
     CategoryDialogComponent,
     MyOrdersComponent,
     OrdersComponent,
