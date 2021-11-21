@@ -31,6 +31,7 @@ import { OnlineStoresComponent } from './online-stores/online-stores.component';
 import { LocalStoresComponent } from './local-stores/local-stores.component';
 import { SettingsComponent } from './settings/settings.component';
 import { NotificationsComponent } from './notifications/notifications.component';
+import { GrabLinkComponent } from './grab-link/grab-link.component';
 
 const appRoutes: Routes = [{path:'myOrders', component:MyOrdersComponent},
                           {path:'orders', component:OrdersComponent},
@@ -39,7 +40,8 @@ const appRoutes: Routes = [{path:'myOrders', component:MyOrdersComponent},
                           {path:'onlineStores',component:OnlineStoresComponent},
                           {path:'localStores',component:LocalStoresComponent},
                           {path:'settings', component:SettingsComponent},
-                          {path:'notifications', component:NotificationsComponent}
+                          {path:'notifications', component:NotificationsComponent},
+                          {path:'grabLink', component:GrabLinkComponent}
                           ];
 @NgModule({
   declarations: [
