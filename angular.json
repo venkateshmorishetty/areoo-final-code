@@ -80,8 +80,7 @@
               "browserTarget": "areooo-front-end:build:production"
             },
             "development": {
-              "browserTarget": "areooo-front-end:build:development",
-              "proxyConfig": "src/proxy.conf.json"
+              "browserTarget": "areooo-front-end:build:development"
             }
           },
           "defaultConfiguration": "development"
