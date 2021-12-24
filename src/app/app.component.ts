@@ -90,6 +90,10 @@ export class AppComponent {
   signUp(){
     this.logincontent=!this.logincontent;
     console.log("signup content"+this.logincontent);
+    /* var data = this.http.get("https://reqres.in/api/users")
+    data.subscribe(data =>{
+        console.log(data)
+    } ) */
   }
 
   login(loginForm:NgForm){

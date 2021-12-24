@@ -81,5 +81,11 @@
   width: 50%;
 }
 
+footer a{
+    color: black;
+    border: 2px solid #cae7d3;
+    border-radius: 20px;
+    
+}
 
 

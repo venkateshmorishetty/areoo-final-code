@@ -1,7 +1,7 @@
 
-<mat-sidenav-container >
+<mat-sidenav-container>
 
-  <!-- for side navigation bar menu -->
+ 
   <mat-sidenav #sidenav position="end" (opened)="showNavandToolbar(true)" (closed)="showNavandToolbar(false)">
     <div class="logo-nav" >
       <img src="../assets/profile.jpg" alt="" >
@@ -41,12 +41,14 @@
       <span class="pl-2">Logout</span>
     </button>
   </mat-sidenav>
+
+  
   <mat-sidenav-content>
 
     
 
-  <!-- for top navigation bar -->
-
+ 
+     
     
     <nav class="navbar navbar-expand row" style="background-color: #e5f4ea; height: 20vh;">
       <a class="navbar-brand" href="#"><img src="../assets/logo.PNG" alt="areooo logo"></a>
@@ -62,16 +64,38 @@
         </ul>
       </div>
     </nav>
+    
+
     <router-outlet></router-outlet>
    
-  
+    
 
-  </mat-sidenav-content>
+  </mat-sidenav-content> 
 </mat-sidenav-container>
+
+
 
 <!-- for bottom toolbar -->
 
+<!--
+<div class="container-fluid">
+  <nav class="navbar navbar-expand row" style="background-color: #e5f4ea; height: 20vh;">
+    <a class="navbar-brand" href="#"><img src="../assets/logo.PNG" alt="areooo logo"></a>
+    
+    <div class="collapse navbar-collapse" >
+      <ul class = "ml-auto joinbutton">
+        <li style="list-style-type: none;">
+            <a *ngIf = "userUnAuthenticated; else profileContent" class=" nav-link" (click)="open(content)">JOIN NOW</a>
+            <ng-template #profileContent >
+              <span style="font-size:30px;cursor:pointer; " ><img src="../assets/navbarIcon.PNG" alt=""></span>
+            </ng-template>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
 
+ -->
 
   <mat-toolbar class="toolbarNav" id="toolbar" style="display: none;">
     <button mat-flat-button routerLink="onlineStores" routerLinkActive="active-link">
